@@ -28,7 +28,7 @@ def send_to(em, msgs, subj):
     msg["From"] = config.CONFIG["email"]
     msg["To"] = em
 
-    if config.CONFIG["cert"] == "":
+    if config.CONFIG["cert"] == "" or True:
         try:
             serv = smtplib.SMTP('127.0.0.1', port=9267)
             serv.sendmail(config.CONFIG["email"], [em], msg.as_string())

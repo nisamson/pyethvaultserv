@@ -38,10 +38,10 @@ def main(path_to_config_file):
 
     try:
         if libconf.CONFIG["key"] == "":
-            flsk.app.run(port=80, threaded=True)
+            flsk.app.run(host="0.0.0.0", port=80, threaded=True)
         else:
             context = (libconf.CONFIG["cert"], libconf.CONFIG["key"])
-            flsk.app.run(port=80, threaded=True, ssl_context=context)
+            flsk.app.run(host="0.0.0.0", port=443, threaded=True, ssl_context=context)
     finally:
         poll_thread.kill()
         poll_thread.wait_until_dead()
