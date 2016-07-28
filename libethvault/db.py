@@ -32,8 +32,8 @@ def set_email(vault_addr, email_addr):
         if old_email.email != email_addr:
             em.send_to(old_email.email, "Alert: email address for vault {} has been changed to {}".format(vault_addr, email_addr),
                        "Contact change alert for vault {}".format(vault_addr))
-            old_email.email = email_addr
             print "{}: {} -> {}".format(vault_addr, old_email.email, email_addr)
+            old_email.email = email_addr
     except KeyError:
         em.send_to(email_addr, "Your email address has been registered for alerts from vault {}, owner {}.".format(
             vault_addr, old_email.owner
