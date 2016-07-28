@@ -6,8 +6,7 @@ CONFIG = {"cert": "",
           "creation": 1000000,
           "db_loc": "./ethvault.sqlite",
           "mail_delay": 10,
-          "loop_delay": 15,
-          "lock_file": "lock.file"
+          "loop_delay": 15
           }
 
 
